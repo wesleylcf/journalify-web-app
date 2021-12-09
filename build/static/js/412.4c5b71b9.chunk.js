@@ -1,0 +1,2 @@
+(this["webpackJsonp@journalify/local-client"]=this["webpackJsonp@journalify/local-client"]||[]).push([[412],{644:function(a,s){Prism.languages.t4=Prism.languages["t4-cs"]=Prism.languages["t4-templating"].createT4("csharp")}}]);
+//# sourceMappingURL=412.4c5b71b9.chunk.js.map

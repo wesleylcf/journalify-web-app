@@ -1,0 +1,2 @@
+(this["webpackJsonp@journalify/local-client"]=this["webpackJsonp@journalify/local-client"]||[]).push([[189],{421:function(t,n){Prism.languages.ini={comment:/^[ \t]*[;#].*$/m,selector:/^[ \t]*\[.*?\]/m,constant:/^[ \t]*[^\s=]+?(?=[ \t]*=)/m,"attr-value":{pattern:/=.*/,inside:{punctuation:/^[=]/}}}}}]);
+//# sourceMappingURL=189.2fdfecb4.chunk.js.map
