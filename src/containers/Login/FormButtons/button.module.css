@@ -6,3 +6,15 @@
 .Container {
   margin-bottom: 0.75rem;
 }
+
+.IsButton {
+  background: none;
+  border: none;
+  padding: 0;
+  color: white;
+  cursor: pointer;
+}
+
+.IsButton:hover {
+  color: #1c5cc9;
+}

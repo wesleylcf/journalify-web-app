@@ -29,6 +29,7 @@ const Login = ({ showModal, hideModalHandler }) => {
 
   useEffect(() => {
     if (user) hideModalHandler();
+    // eslint-disable-next-line
   }, [user]);
 
   useEffect(() => {

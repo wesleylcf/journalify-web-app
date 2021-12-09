@@ -1,5 +1,3 @@
-import { useState } from "react";
-
 const Email = ({ emailInput, setEmailInput }) => {
   return (
     <div className="field">

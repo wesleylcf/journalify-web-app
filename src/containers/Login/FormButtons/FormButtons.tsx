@@ -18,12 +18,12 @@ const SubmitButton = ({ isLogin, hideModalHandler, onSwitchLoginHandler }) => {
         </button>
       </div>
       <div className={`control ${styles.Link}`}>
-        <a
-          className="is-button is-rounded"
+        <button
+          className={`${styles.IsButton} is-button is-rounded`}
           onClick={(e) => onSwitchLoginHandler(e)}
         >
           {isLogin ? "Or create an account" : "Or log in"}
-        </a>
+        </button>
       </div>
     </div>
   );
