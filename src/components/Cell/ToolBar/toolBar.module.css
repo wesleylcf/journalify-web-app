@@ -1,0 +1,14 @@
+.ToolBar {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+.Button {
+  opacity: 0.5;
+  transition: opacity 0.3s;
+}
+
+.Button:hover {
+  opacity: 1;
+}

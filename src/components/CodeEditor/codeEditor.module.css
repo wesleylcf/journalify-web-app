@@ -1,0 +1,36 @@
+.CodeEditor {
+  height: calc(100% - 10px);
+  display: flex;
+  flex-direction: 'row';
+  width: 100%;
+}
+
+.ProgressWrapper {
+  height: 100%;
+  flex-grow: 1;
+  background-color: blanchedalmond;
+  display: flex;
+  align-items: center;
+  padding-left: 10%;
+  padding-right: 10%;
+  animation: fadeIn 0.5s;
+  width: 100%;
+}
+
+.ProgressBackground {
+  background-color: blanchedalmond;
+  height: 100%;
+  flex-grow: 1;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}

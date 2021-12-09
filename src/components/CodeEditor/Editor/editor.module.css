@@ -1,0 +1,20 @@
+.Editor {
+  position: relative;
+  text-align: initial;
+  display: flex;
+  width: calc(100% - 10px);
+}
+
+.Editor .ButtonFormat {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  z-index: 20;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.Editor:hover .ButtonFormat {
+  position: absolute;
+  opacity: 1;
+}

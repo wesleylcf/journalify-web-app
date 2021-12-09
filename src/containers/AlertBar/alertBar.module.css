@@ -1,0 +1,22 @@
+.DismissOrLogin {
+  align-items: center;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+  min-width: 15%;
+}
+
+.Container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.Button {
+  margin-right: 10%;
+}
+
+.ExpandAlertBar {
+  width: 100%;
+  height: 4rem;
+  margin-bottom: 0px;
+}
