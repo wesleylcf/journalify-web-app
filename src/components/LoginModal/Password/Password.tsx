@@ -8,7 +8,7 @@ const Password = ({ passwordInput, setPasswordInput }) => {
         <input
           className="input"
           type="password"
-          placeholder="Email input"
+          placeholder="Password"
           value={passwordInput}
           onChange={(e) => setPasswordInput(e.target.value)}
         />

@@ -8,8 +8,8 @@ import FormButtons from "./FormButtons/FormButtons";
 import Message from "./Message/Message";
 
 const LoginModal = ({ hideLoginModalHandler }) => {
-  const [emailInput, setEmailInput] = useState("wesleylinzefen@gmail.com");
-  const [passwordInput, setPasswordInput] = useState("password");
+  const [emailInput, setEmailInput] = useState("");
+  const [passwordInput, setPasswordInput] = useState("");
   const [isLogin, setIsLogin] = useState(false);
   const [hideWarning, setHideWarning] = useState(false);
   const [hideSuccess, setHideSuccess] = useState(false);
