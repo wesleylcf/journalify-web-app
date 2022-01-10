@@ -19,13 +19,8 @@ const MainWrapper = () => {
   );
   const setErrorHandler = useContext(ModalContext).error.handler;
   useEffect(() => {
-    console.log("error", error);
     setErrorHandler(error);
   }, [error]);
-
-  useEffect(() => {
-    console.log("activeTab", activeTab);
-  }, [activeTab]);
 
   return (
     <main>

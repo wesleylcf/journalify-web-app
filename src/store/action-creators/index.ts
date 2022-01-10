@@ -314,7 +314,7 @@ export const signup = (email: string, password: string) => {
       .catch((e) => {
         dispatch({
           type: ActionTypes.SIGNUP_ERROR,
-          payload: { error: e.message },
+          payload: { error: "Invalid email or password. Please try again." },
         });
       });
   };
