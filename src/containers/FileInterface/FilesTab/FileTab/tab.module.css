@@ -1,0 +1,4 @@
+.Disable {
+  pointer-events: none !important;
+  color: grey;
+}

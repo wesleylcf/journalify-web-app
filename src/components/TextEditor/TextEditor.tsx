@@ -6,9 +6,10 @@ import { useActions } from "../../hooks/useActions";
 
 interface TextEditorProps {
   cell: Cell;
+  fileName: string;
 }
 
-const TextEditor: React.FC<TextEditorProps> = ({ cell }) => {
+const TextEditor: React.FC<TextEditorProps> = ({ cell, fileName }) => {
   const { updateCell } = useActions();
   const [isEditing, setIsEditing] = useState(false);
   const editorRef = useRef<HTMLDivElement | null>(null);

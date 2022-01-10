@@ -14,7 +14,28 @@ export const defaultCell: Cell = {
   type: "markdown",
 };
 
+export interface File {
+  name: string;
+  loading: boolean;
+  error: string | null;
+  order: string[];
+  data: {
+    [id: string]: Cell;
+  };
+  saving: boolean;
+  opened: boolean;
+}
+
+export const defaultFile: File = {
+  name: "intro",
+  data: { defaultCell },
+  order: [defaultCell.id],
+  loading: false,
+  error: null,
+  saving: false,
+  opened: false,
+};
+
 export interface User {
-  password: string;
   cells: Cell[];
 }

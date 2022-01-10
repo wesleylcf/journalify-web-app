@@ -10,11 +10,12 @@ import { Cell } from "../../store/types";
 
 interface CodeEditorProps {
   cell: Cell;
+  fileName: string;
 }
 
-const CodeEditor: React.FC<CodeEditorProps> = ({ cell }) => {
+const CodeEditor: React.FC<CodeEditorProps> = ({ cell, fileName }) => {
   const bundle = useTypedSelector((state) => state.bundles[cell.id]);
-  const cumulativeCode = useCumulativeCode(cell.id);
+  const cumulativeCode = useCumulativeCode(cell.id, fileName);
   const { updateCell, createBundle } = useActions();
   useEffect(() => {
     if (!bundle) {

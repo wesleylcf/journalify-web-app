@@ -1,7 +1,11 @@
 import React from "react";
 import styles from "./button.module.css";
 
-const SubmitButton = ({ isLogin, hideModalHandler, onSwitchLoginHandler }) => {
+const SubmitButton = ({
+  isLogin,
+  hideLoginModalHandler,
+  onSwitchLoginHandler,
+}) => {
   return (
     <div className={`field is-grouped ${styles.Container}`}>
       <div className="control">
@@ -12,7 +16,7 @@ const SubmitButton = ({ isLogin, hideModalHandler, onSwitchLoginHandler }) => {
       <div className="control">
         <button
           className="button is-link is-light is-rounded"
-          onClick={hideModalHandler}
+          onClick={hideLoginModalHandler}
         >
           Cancel
         </button>

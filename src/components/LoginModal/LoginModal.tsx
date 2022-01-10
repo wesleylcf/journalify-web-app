@@ -1,36 +1,36 @@
 import { useState, useEffect } from "react";
 import { useActions } from "../../hooks/useActions";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-import Spinner from "../../components/Spinner/Spinner";
+import Spinner from "../Spinner/Spinner";
 import Email from "./Email/Email";
 import Password from "./Password/Password";
 import FormButtons from "./FormButtons/FormButtons";
 import Message from "./Message/Message";
 
-const Login = ({ showModal, hideModalHandler }) => {
+const LoginModal = ({ hideLoginModalHandler }) => {
   const [emailInput, setEmailInput] = useState("wesleylinzefen@gmail.com");
   const [passwordInput, setPasswordInput] = useState("password");
   const [isLogin, setIsLogin] = useState(false);
   const [hideWarning, setHideWarning] = useState(false);
   const [hideSuccess, setHideSuccess] = useState(false);
-  const [user, loading, error, signedUp] = useTypedSelector(
-    ({ auth: { user, loading, error, signedUp } }) => [
-      user,
-      loading,
-      error,
-      signedUp,
-    ]
-  );
+  const [user, error, loggingIn, loggingOut, signingUp, signedUp] =
+    useTypedSelector(
+      ({
+        auth: { user, error, loggingIn, loggingOut, signingUp, signedUp },
+      }) => [user, error, loggingIn, loggingOut, signingUp, signedUp]
+    );
   const { signup, login } = useActions();
   const onSwitchLoginHandler = (e) => {
     e.preventDefault();
     setIsLogin(!isLogin);
+    setHideWarning(true);
+    setHideSuccess(true);
   };
 
   useEffect(() => {
-    if (user) hideModalHandler();
+    if (user.id) hideLoginModalHandler();
     // eslint-disable-next-line
-  }, [user]);
+  }, [user.id]);
 
   useEffect(() => {
     if (signedUp) setIsLogin(true);
@@ -45,8 +45,9 @@ const Login = ({ showModal, hideModalHandler }) => {
   };
 
   return (
-    <div className={`modal ${showModal ? "is-active" : ""}`}>
-      {loading && <Spinner />}
+    <div className={"modal is-active"}>
+      {signingUp && <Spinner message="Signing up..." />}
+      {loggingIn && <Spinner message="Logging in..." />}
       <div className="modal-background"></div>
       <div className="modal-content">
         <form onSubmit={(e) => onSubmitHandler(e)}>
@@ -56,7 +57,7 @@ const Login = ({ showModal, hideModalHandler }) => {
             setPasswordInput={setPasswordInput}
           />
           <FormButtons
-            hideModalHandler={hideModalHandler}
+            hideLoginModalHandler={hideLoginModalHandler}
             isLogin={isLogin}
             onSwitchLoginHandler={onSwitchLoginHandler}
           />
@@ -80,4 +81,4 @@ const Login = ({ showModal, hideModalHandler }) => {
   );
 };
 
-export default Login;
+export default LoginModal;

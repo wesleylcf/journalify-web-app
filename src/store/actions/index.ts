@@ -66,40 +66,43 @@ export interface FetchCellsErrorAction {
   };
 }
 
-export interface SaveCellsStartAction {
+export interface saveFileStartAction {
   type: ActionTypes.SAVE_CELLS_START;
 }
 
-export interface SaveCellsCompleteAction {
+export interface saveFileCompleteAction {
   type: ActionTypes.SAVE_CELLS_COMPLETE;
 }
 
-export interface SaveCellsErrorAction {
+export interface saveFileErrorAction {
   type: ActionTypes.SAVE_CELLS_ERROR;
   payload: {
     error: string;
   };
 }
 
-export interface loginStartAction {
+export interface LoginStartAction {
   type: ActionTypes.LOGIN_START;
 }
 
-export interface loginSuccessAction {
+export interface LoginSuccessAction {
   type: ActionTypes.LOGIN_SUCCESS;
   payload: {
-    user: string;
+    user: {
+      id: string;
+      name: string;
+    };
   };
 }
 
-export interface loginErrorAction {
+export interface LoginErrorAction {
   type: ActionTypes.LOGIN_ERROR;
   payload: {
     error: string;
   };
 }
 
-export interface signupStartAction {
+export interface SignupStartAction {
   type: ActionTypes.SIGNUP_START;
   payload: {
     email: string;
@@ -107,23 +110,88 @@ export interface signupStartAction {
   };
 }
 
-export interface signupSuccessAction {
+export interface SignupSuccessAction {
   type: ActionTypes.SIGNUP_SUCCESS;
 }
 
-export interface signupErrorAction {
+export interface SignupErrorAction {
   type: ActionTypes.SIGNUP_ERROR;
   payload: {
     error: string;
   };
 }
 
-export interface logoutStartAction {
+export interface LogoutStartAction {
   type: ActionTypes.LOGOUT_START;
 }
 
-export interface logoutSuccessAction {
+export interface LogoutSuccessAction {
   type: ActionTypes.LOGOUT_SUCCESS;
+}
+
+export interface FetchFilesStartAction {
+  type: ActionTypes.FETCH_FILES_START;
+}
+
+export interface FetchFilesSuccessAction {
+  type: ActionTypes.FETCH_FILES_SUCCESS;
+  payload: {
+    files: string[];
+  };
+}
+
+export interface FetchFilesErrorAction {
+  type: ActionTypes.FETCH_FILES_ERROR;
+  payload: {
+    error: string;
+  };
+}
+
+export interface MakeFileActiveAction {
+  type: ActionTypes.ADD_FILE_TO_TABS;
+  payload: { fileName: string };
+}
+
+export interface MakeFileInactiveAction {
+  type: ActionTypes.REMOVE_FILE_FROM_TABS;
+  payload: { fileName: string };
+}
+
+export interface MakeFileCurrentAction {
+  type: ActionTypes.MAKE_FILE_ACTIVE;
+  payload: { fileName: string };
+}
+
+export interface CreateFileStartAction {
+  type: ActionTypes.CREATE_FILE_START;
+}
+
+export interface CreateFileSuccessAction {
+  type: ActionTypes.CREATE_FILE_SUCCESS;
+  payload: {
+    name: string;
+  };
+}
+
+export interface CreateFileErrorAction {
+  type: ActionTypes.CREATE_FILE_ERROR;
+  payload: { error: string };
+}
+
+export interface DeleteFileStartAction {
+  type: ActionTypes.DELETE_FILE_START;
+}
+
+export interface DeleteFileSuccessAction {
+  type: ActionTypes.DELETE_FILE_SUCCESS;
+  payload: {
+    fileName: string;
+  };
+}
+
+export interface DeleteFileErrorAction {
+  type: ActionTypes.DELETE_FILE_ERROR;
+  payload: { error: string };
 }
 
 export type Actions =
@@ -136,14 +204,26 @@ export type Actions =
   | FetchCellsAction
   | FetchCellsCompleteAction
   | FetchCellsErrorAction
-  | SaveCellsStartAction
-  | SaveCellsCompleteAction
-  | SaveCellsErrorAction
-  | loginStartAction
-  | loginErrorAction
-  | loginSuccessAction
-  | signupErrorAction
-  | signupStartAction
-  | signupSuccessAction
-  | logoutStartAction
-  | logoutSuccessAction;
+  | saveFileStartAction
+  | saveFileCompleteAction
+  | saveFileErrorAction
+  | LoginStartAction
+  | LoginErrorAction
+  | LoginSuccessAction
+  | SignupErrorAction
+  | SignupStartAction
+  | SignupSuccessAction
+  | LogoutStartAction
+  | LogoutSuccessAction
+  | FetchFilesStartAction
+  | FetchFilesSuccessAction
+  | FetchFilesErrorAction
+  | MakeFileActiveAction
+  | MakeFileInactiveAction
+  | MakeFileCurrentAction
+  | CreateFileStartAction
+  | CreateFileSuccessAction
+  | CreateFileErrorAction
+  | DeleteFileErrorAction
+  | DeleteFileStartAction
+  | DeleteFileSuccessAction;

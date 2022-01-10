@@ -2,7 +2,7 @@ import { useState } from "react";
 import styles from "./alertBar.module.css";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
 
-const AlertBar = ({ showModalHandler }) => {
+const AlertBar = ({ showLoginModalHandler }) => {
   const [showAlertBar, setShowAlertBar] = useState(true);
   const dismissAlertBarHandler = () => {
     return setShowAlertBar(false);
@@ -19,8 +19,8 @@ const AlertBar = ({ showModalHandler }) => {
       </button>
     </div>
   );
-  if (user) return null;
-  if (!user && showAlertBar)
+  if (user.id) return null;
+  if (!user.id && showAlertBar)
     return (
       <article className="message is-danger" style={{ marginBottom: "0px" }}>
         <div className={`message-header ${styles.Container}`}>
@@ -31,7 +31,7 @@ const AlertBar = ({ showModalHandler }) => {
           <div className={styles.DismissOrLogin}>
             <button
               className={`button is-success is-light is-rounded ${styles.Button}`}
-              onClick={showModalHandler}
+              onClick={showLoginModalHandler}
             >
               Login
             </button>

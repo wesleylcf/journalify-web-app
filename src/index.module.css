@@ -15,7 +15,14 @@ body,
 }
 
 .Logo {
-  width: 20%;
-  height: 20%;
+  width: 20vw;
+  height: auto;
   margin: 10px 2.5%;
+}
+
+@media screen and(max-width: 500px) {
+  .Logo {
+    width: 30vw;
+    height: auto;
+  }
 }

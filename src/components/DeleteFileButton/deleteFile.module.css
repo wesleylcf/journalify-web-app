@@ -1,6 +1,9 @@
 .ButtonWrapper {
-  height: 100%;
+  height: calc(6vh + 0.7rem);
   width: 10%;
   display: flex;
   align-items: center;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
