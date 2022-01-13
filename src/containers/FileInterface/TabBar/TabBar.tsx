@@ -2,7 +2,6 @@ import React, { Fragment } from "react";
 import { useActions } from "../../../hooks/useActions";
 
 const TabBar = ({ tabNames, activeTab }) => {
-  console.log("tabs", tabNames);
   const { removeFileFromTabs, makeFileActive } = useActions();
 
   const onCloseTabHandler = (e) => {

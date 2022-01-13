@@ -12,7 +12,6 @@ const CellListOffline = () => {
   const files = useTypedSelector(({ files: { files } }) => files);
   const cells = files["intro"].order.map((id) => files["intro"].data[id]);
   const { loading } = files["intro"];
-  console.log("CellList Offline");
   if (loading) return <Spinner message="Loading file..." />;
 
   let child = cells.map((cell) => {

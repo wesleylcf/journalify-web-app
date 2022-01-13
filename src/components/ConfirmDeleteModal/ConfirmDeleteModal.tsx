@@ -16,7 +16,6 @@ const ConfirmDeleteModal = ({ fileName, hideModal }) => {
   //   console.log("files_modal", files);
   const { deleteFile } = useActions();
   const onConfirmHandler = () => {
-    console.log("deleting", fileName);
     deleteFile(fileName);
     hideModal();
   };

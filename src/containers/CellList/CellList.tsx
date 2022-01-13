@@ -18,7 +18,6 @@ const CellList: React.FC<CellListProps> = ({ fileName }) => {
   const files = useTypedSelector(({ files: { files } }) => files);
   const cells = files[fileName].order.map((id) => files[fileName].data[id]);
   const { saving, loading } = files[fileName];
-  console.log("CellList");
   const { fetchFile } = useActions();
 
   useEffect(() => {

@@ -24,7 +24,6 @@ const FileInterface: React.FC<FileInterfaceProps> = ({
   activeTab,
 }) => {
   const { logout, fetchFiles } = useActions();
-  console.log(files, activeTab, files[activeTab]);
   const loading = activeTab ? files[activeTab].loading : false;
   const fileArray = Object.keys(files);
   const previousTabs = usePrevious(tabs);
