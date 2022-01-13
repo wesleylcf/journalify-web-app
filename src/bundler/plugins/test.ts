@@ -42,7 +42,6 @@ export const unpkgPathPlugin = () => {
             loader: "jsx",
             contents: `
               const react = require("react-select");
-              console.log(message);
             `,
           };
         }
