@@ -40,6 +40,7 @@ export const unpkgPathPlugin = () => {
         if (args.path === "index.js") {
           return {
             loader: "jsx",
+            //console.log(message) was below const react
             contents: `
               const react = require("react-select");
             `,
