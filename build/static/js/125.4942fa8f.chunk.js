@@ -1,2 +1,0 @@
-(this["webpackJsonp@journalify/local-client"]=this["webpackJsonp@journalify/local-client"]||[]).push([[125],{357:function(a,e){var l;(l=Prism).languages.etlua={delimiter:{pattern:/^<%[-=]?|-?%>$/,alias:"punctuation"},"language-lua":{pattern:/[\s\S]+/,inside:l.languages.lua}},l.hooks.add("before-tokenize",(function(a){l.languages["markup-templating"].buildPlaceholders(a,"etlua",/<%[\s\S]+?%>/g)})),l.hooks.add("after-tokenize",(function(a){l.languages["markup-templating"].tokenizePlaceholders(a,"etlua")}))}}]);
-//# sourceMappingURL=125.4942fa8f.chunk.js.map
