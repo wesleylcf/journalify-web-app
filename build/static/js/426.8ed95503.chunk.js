@@ -1,2 +1,0 @@
-(this["webpackJsonp@journalify/local-client"]=this["webpackJsonp@journalify/local-client"]||[]).push([[426],{658:function(a,n){!function(a){var n=a.util.clone(a.languages.typescript);a.languages.tsx=a.languages.extend("jsx",n);var e=a.languages.tsx.tag;e.pattern=RegExp(/(^|[^\w$]|(?=<\/))/.source+"(?:"+e.pattern.source+")",e.pattern.flags),e.lookbehind=!0}(Prism)}}]);
-//# sourceMappingURL=426.8ed95503.chunk.js.map

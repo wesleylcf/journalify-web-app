@@ -16,3 +16,6 @@
 # misc
 .DS_Store
 *.pem
+
+# configs
+/src/firebase.config.js

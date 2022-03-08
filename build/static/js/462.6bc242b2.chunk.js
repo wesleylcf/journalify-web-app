@@ -1,2 +1,0 @@
-(this["webpackJsonp@journalify/local-client"]=this["webpackJsonp@journalify/local-client"]||[]).push([[462],{694:function(a,n){!function(a){function n(n,e){a.languages[n]&&a.languages.insertBefore(n,"comment",{"doc-comment":e})}var e=a.languages.markup.tag,t={pattern:/\/\/\/.*/,greedy:!0,alias:"comment",inside:{tag:e}},i={pattern:/'''.*/,greedy:!0,alias:"comment",inside:{tag:e}};n("csharp",t),n("fsharp",t),n("vbnet",i)}(Prism)}}]);
-//# sourceMappingURL=462.6bc242b2.chunk.js.map
