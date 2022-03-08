@@ -18,4 +18,4 @@
 *.pem
 
 # configs
-firebase.config.js
+/src/firebase.config.js
