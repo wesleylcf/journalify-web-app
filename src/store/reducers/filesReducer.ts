@@ -5,11 +5,15 @@ import { FileState } from "./cellsReducer";
 import cellsReducer from "./cellsReducer";
 import produce from "immer";
 
+type FileName = string;
+
+export interface Files {
+  [fileName: string]: FileState;
+}
 export interface FilesState {
-  files: {
-    [fileName: string]: FileState;
-  };
-  activeTab: string | null;
+  files: Files;
+  fileOrder: FileName[];
+  activeTab: FileName | null;
   tabs: string[];
   loading: boolean;
   error: string | null;
@@ -20,6 +24,7 @@ const initialState: FilesState = {
   loading: false,
   error: null,
   files: { intro: defaultFile },
+  fileOrder: [],
   tabs: [],
   activeTab: "intro",
   saving: false,
@@ -49,7 +54,10 @@ const reducer = produce(
         return state;
       case ActionTypes.FETCH_FILES_SUCCESS:
         state.loading = false;
-        state.files = action.payload.files.reduce((accm, fileName) => {
+        const { files } = action.payload;
+        state.fileOrder = files.map((name) => name);
+        console.log(files);
+        state.files = files.reduce((accm, fileName) => {
           accm[fileName] = { ...defaultFile, name: fileName };
           return accm;
         }, {} as FilesState["files"]);

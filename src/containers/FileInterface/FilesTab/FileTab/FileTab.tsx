@@ -3,10 +3,7 @@ import { useActions } from "../../../../hooks/useActions";
 import { File } from "../../../../store";
 import styles from "./tab.module.css";
 
-interface FileTabProps {
-  file: File;
-}
-const FileTab: React.FC<FileTabProps> = ({ file }) => {
+const FileTab = ({ file, dragRef, ...props }) => {
   const { addFileToTabs, makeFileActive } = useActions();
   const onClickFileHandler = (e) => {
     addFileToTabs(e.target.text);
@@ -14,6 +11,8 @@ const FileTab: React.FC<FileTabProps> = ({ file }) => {
   };
   return (
     <a
+      ref={dragRef}
+      {...props}
       className={`panel-block ${file.opened ? styles.Disable : ""}`}
       onClick={onClickFileHandler}
     >

@@ -3,11 +3,12 @@ import { Actions } from "../actions";
 import { Cell } from "../types";
 import produce from "immer";
 
+type CellId = string;
 export interface FileState {
   name: string;
   loading: boolean;
   error: string | null;
-  order: string[];
+  order: CellId[];
   data: {
     [id: string]: Cell;
   };

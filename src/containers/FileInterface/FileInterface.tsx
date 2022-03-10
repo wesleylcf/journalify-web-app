@@ -10,6 +10,7 @@ import Spinner from "../../components/Spinner/Spinner";
 import { FilesState } from "../../store/reducers/filesReducer";
 import { useMemo, useState } from "react";
 import { usePrevious } from "../../hooks/usePrevious";
+import { DragDropContext } from "react-beautiful-dnd";
 interface FileInterfaceProps extends Partial<FilesState> {
   user: {
     id: string;
@@ -40,7 +41,7 @@ const FileInterface: React.FC<FileInterfaceProps> = ({
   }, [user, fileArray.length]);
 
   return (
-    <>
+    <DragDropContext>
       {loading && <Spinner message="Fetching your files..." />}
       <article className="panel is-primary">
         <div className={`panel-heading ${styles.WelcomePanel}`}>
@@ -49,11 +50,11 @@ const FileInterface: React.FC<FileInterfaceProps> = ({
         </div>
         <TabBar tabNames={tabs} activeTab={activeTab} />
         <TabContent>
-          <FilesTab files={files} hidden={activeTab} />
+          <FilesTab files={files} activeTab={activeTab} />
           {activeTab && content[activeTab]}
         </TabContent>
       </article>
-    </>
+    </DragDropContext>
   );
 };
 

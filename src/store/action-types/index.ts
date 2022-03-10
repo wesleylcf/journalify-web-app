@@ -33,4 +33,7 @@ export enum ActionTypes {
   DELETE_FILE_START = "delete_file_start",
   DELETE_FILE_SUCCESS = "delete_file_success",
   DELETE_FILE_ERROR = "delete_file_error",
+  MOVE_FILE_START = "move_file_start",
+  MOVE_FILE_SUCCESS = "move_file_success",
+  MOVE_FILE_ERROR = "move_file_error",
 }
