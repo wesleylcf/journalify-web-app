@@ -1,5 +1,5 @@
 import reactDOM from "react-dom";
-import React, { useState, useContext } from "react";
+import React, { useState } from "react";
 import { Provider } from "react-redux";
 import { store } from "./store";
 import styles from "./index.module.css";

@@ -3,7 +3,8 @@ import { Actions } from "../actions";
 import { Cell } from "../types";
 import produce from "immer";
 
-interface CellState {
+export interface FileState {
+  name: string;
   loading: boolean;
   error: string | null;
   order: string[];
@@ -11,18 +12,21 @@ interface CellState {
     [id: string]: Cell;
   };
   saving: boolean;
+  opened: boolean;
 }
 
-const initialState: CellState = {
+const initialState: FileState = {
+  name: null,
   loading: false,
   error: null,
   order: [],
   data: {},
   saving: false,
+  opened: false,
 };
 
 const reducer = produce(
-  (state: CellState = initialState, action: Actions): CellState => {
+  (state: FileState = initialState, action: Actions): FileState => {
     switch (action.type) {
       case ActionTypes.SAVE_CELLS_START:
         state.saving = true;
@@ -44,7 +48,7 @@ const reducer = produce(
         state.data = cells.reduce((accm, cell) => {
           accm[cell.id] = cell;
           return accm;
-        }, {} as CellState["data"]);
+        }, {} as FileState["data"]);
         return state;
       case ActionTypes.FETCH_CELLS_ERROR:
         state.loading = false;

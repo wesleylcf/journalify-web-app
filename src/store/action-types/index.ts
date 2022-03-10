@@ -1,3 +1,5 @@
+// Not sure how to merge them as a single enum if I decide to split them
+
 export enum ActionTypes {
   MOVE_CELL = "move_cell",
   DELETE_CELL = "delete_cell",
