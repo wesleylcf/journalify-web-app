@@ -3,7 +3,8 @@ import { Actions } from "../actions";
 import { Cell } from "../types";
 import produce from "immer";
 
-interface FileState {
+export interface FileState {
+  name: string;
   loading: boolean;
   error: string | null;
   order: string[];
@@ -11,14 +12,17 @@ interface FileState {
     [id: string]: Cell;
   };
   saving: boolean;
+  opened: boolean;
 }
 
 const initialState: FileState = {
+  name: null,
   loading: false,
   error: null,
   order: [],
   data: {},
   saving: false,
+  opened: false,
 };
 
 const reducer = produce(
