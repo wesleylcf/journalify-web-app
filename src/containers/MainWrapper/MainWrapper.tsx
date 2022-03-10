@@ -1,6 +1,5 @@
 import { useContext, useEffect } from "react";
 import { useTypedSelector } from "../../hooks/useTypedSelector";
-import CellList from "../CellList/CellList";
 import CellListOffline from "../CellListOffline/CellListOffline";
 import FileInterface from "../FileInterface/FileInterface";
 import { ModalContext } from "../..";

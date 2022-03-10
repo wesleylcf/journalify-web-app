@@ -1,6 +1,3 @@
-import { useState, useEffect } from "react";
-import { useActions } from "../../hooks/useActions";
-import { useTypedSelector } from "../../hooks/useTypedSelector";
 import Spinner from "../Spinner/Spinner";
 import Message from "../LoginModal/Message/Message";
 
@@ -10,9 +7,10 @@ interface ConfirmModalProps {
   heading: string;
   onCancel: () => void;
   onConfirm: () => void;
+  loading: boolean;
 }
 
-const ConfirmModal = ({
+const ConfirmModal: React.FC<ConfirmModalProps> = ({
   isDanger,
   message,
   heading,
